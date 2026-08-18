@@ -1,0 +1,21 @@
+<h1>Mon compte</h1>
+<p>Zone dangereuse :</p>
+
+<button type="button" class="btn" (click)="modaleOuverte = true">
+  Supprimer le compte
+</button>
+
+@if (modaleOuverte) {
+  <div class="overlay">
+    <div class="modale">
+      <h2>Confirmer la suppression ?</h2>
+      <p>Cette action est définitive.</p>
+      <button type="button" class="btn btn--secondaire" (click)="modaleOuverte = false">
+        Annuler
+      </button>
+      <button type="button" class="btn" (click)="confirmer()">
+        Supprimer
+      </button>
+    </div>
+  </div>
+}

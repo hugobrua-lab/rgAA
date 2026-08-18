@@ -1,0 +1,16 @@
+# Dépendances et build
+/node_modules
+/dist
+/out-tsc
+
+# Cache du CLI Angular
+/.angular/cache
+
+# IDE et système
+/.vscode/*
+!/.vscode/settings.json
+/.idea
+.DS_Store
+
+# Logs
+npm-debug.log*

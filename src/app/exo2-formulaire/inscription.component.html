@@ -1,0 +1,14 @@
+<h1>Inscription à la newsletter</h1>
+
+<form [formGroup]="form" (ngSubmit)="envoyer()">
+  Nom
+  <input formControlName="nom" placeholder="Votre nom">
+
+  E-mail
+  <input formControlName="email" placeholder="exemple@mail.fr">
+  @if (form.controls.email.invalid && form.controls.email.touched) {
+    <div class="error">E-mail invalide</div>
+  }
+
+  <div class="btn" (click)="envoyer()">Envoyer</div>
+</form>
