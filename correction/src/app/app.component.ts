@@ -4,7 +4,13 @@ import { Title } from '@angular/platform-browser';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { filter } from 'rxjs';
 
-// CORRIGÉ EXERCICE 4 : focus replacé + page annoncée à chaque navigation
+// CORRIGÉ EXERCICE 4 : focus replacé + page annoncée à chaque navigation.
+//
+// Piège découvert au test : si announce() part en même temps que focus(),
+// le lecteur d'écran priorise la parole liée au focus et jette le message
+// de la région live. On diffère donc l'annonce de ~150 ms.
+// (Le changement de document.title seul n'est jamais lu dans une SPA :
+// il n'est prononcé qu'au chargement réel d'une page.)
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink],
@@ -16,7 +22,7 @@ export class AppComponent {
       .pipe(filter((e) => e instanceof NavigationEnd))
       .subscribe(() => {
         document.getElementById('contenu')?.focus();
-        annonceur.announce(titre.getTitle());
+        setTimeout(() => annonceur.announce(titre.getTitle()), 150);
       });
   }
 }
