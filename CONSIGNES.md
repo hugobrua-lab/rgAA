@@ -88,3 +88,24 @@ Thématiques RGAA : 8 (éléments obligatoires), 12 (navigation)
 
 Validation : à chaque changement de route, le titre d'onglet change, le
 lecteur d'écran annonce la page, Tab repart du contenu.
+
+---
+
+## Exercice 5 (bonus) — La chasse aux critères oubliés
+
+Rien à corriger cette fois : ajoutez du contenu conforme du premier coup.
+
+1. **Langue (8.7)** : dans le pied de page, ajoutez « Made with Angular »
+   balisé pour être prononcé en anglais par le lecteur d'écran.
+2. **Tableau (thématique 5)** : sur Mon compte, ajoutez un tableau
+   « Dernières commandes » (date, produit, montant) avec titre de tableau
+   et en-têtes de colonnes correctement déclarés.
+3. **Nouvelle fenêtre (13.2)** : dans le pied de page, un lien vers le
+   référentiel RGAA ouvert dans un nouvel onglet, annoncé aux lecteurs
+   d'écran (`.sr-only`).
+4. **Animations (13.8)** : une animation CSS (ex. pulsation du bouton
+   « Supprimer le compte ») désactivée sous `prefers-reduced-motion`.
+
+Validation : changement de voix sur la phrase anglaise ; tableau navigable
+cellule par cellule avec annonce des en-têtes ; « nouvelle fenêtre »
+annoncé ; animation coupée quand « Réduire les animations » est activé.
