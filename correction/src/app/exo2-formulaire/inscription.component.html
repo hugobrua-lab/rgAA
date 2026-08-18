@@ -1,0 +1,25 @@
+<h1>Inscription à la newsletter</h1>
+
+<form [formGroup]="form" (ngSubmit)="envoyer()">
+  <label for="nom">Nom (obligatoire)</label>
+  <input id="nom" formControlName="nom" required
+         autocomplete="family-name"
+         [attr.aria-invalid]="nomInvalide"
+         [attr.aria-describedby]="nomInvalide ? 'err-nom' : null">
+  @if (nomInvalide) {
+    <p id="err-nom" class="error">Saisissez votre nom.</p>
+  }
+
+  <label for="email">Adresse e-mail (obligatoire)</label>
+  <input id="email" type="email" formControlName="email"
+         required autocomplete="email"
+         [attr.aria-invalid]="emailInvalide"
+         [attr.aria-describedby]="emailInvalide ? 'err-email' : null">
+  @if (emailInvalide) {
+    <p id="err-email" class="error">
+      Saisissez une adresse e-mail valide, ex. nom&#64;domaine.fr
+    </p>
+  }
+
+  <button type="submit" class="btn">Envoyer</button>
+</form>

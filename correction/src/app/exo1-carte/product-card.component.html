@@ -1,0 +1,13 @@
+<article class="card">
+  <img [src]="produit.image" [alt]="produit.nom">
+  <h3 class="title">{{ produit.nom }}</h3>
+  <p class="price">{{ produit.prix | currency:'EUR' }}</p>
+
+  <button type="button" class="btn" (click)="ajouterAuPanier()">
+    Ajouter au panier
+  </button>
+
+  <a class="link" [routerLink]="['/produits', produit.id]">
+    Voir le détail<span class="sr-only"> de {{ produit.nom }}</span>
+  </a>
+</article>

@@ -1,0 +1,25 @@
+<h1>Mon compte</h1>
+<p>Zone dangereuse :</p>
+
+<button type="button" class="btn" #declencheur
+        (click)="modaleOuverte = true">
+  Supprimer le compte
+</button>
+
+@if (modaleOuverte) {
+  <div class="overlay">
+    <div class="modale" role="dialog" aria-modal="true"
+         aria-labelledby="titre-modale"
+         cdkTrapFocus cdkTrapFocusAutoCapture
+         (keydown.escape)="fermer()">
+      <h2 id="titre-modale">Confirmer la suppression ?</h2>
+      <p>Cette action est définitive.</p>
+      <button type="button" class="btn btn--secondaire" (click)="fermer()">
+        Annuler
+      </button>
+      <button type="button" class="btn" (click)="confirmer()">
+        Supprimer
+      </button>
+    </div>
+  </div>
+}

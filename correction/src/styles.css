@@ -1,0 +1,63 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color: #1d1a2e; background: #faf9fd; }
+
+.entete { background: #16122a; padding: 0.75rem 1.5rem; }
+.entete nav { display: flex; gap: 1.5rem; }
+.entete a { color: #cfcbe8; text-decoration: none; font-weight: 600; }
+.entete a:hover { color: #ffffff; text-decoration: underline; }
+
+main { max-width: 60rem; margin: 0 auto; padding: 1.5rem; }
+
+.pied { text-align: center; padding: 1rem; font-size: 0.8rem; color: #b9b9b9; }
+
+/* --- utilitaire fourni : texte lu par les lecteurs d'écran mais masqué --- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* --- exercice 1 : la carte produit --- */
+.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1.25rem; }
+.card { background: #fff; border: 1px solid #e3ddf2; border-radius: 0.75rem; padding: 1rem; }
+.card img { width: 100%; border-radius: 0.5rem; }
+.title { font-size: 1.1rem; font-weight: 700; margin: 0.6rem 0 0.2rem; }
+.price { color: #6b3fa0; font-weight: 600; margin: 0 0 0.8rem; }
+.btn {
+  display: inline-block; background: #7b4dd6; color: #fff;
+  border: none; border-radius: 0.5rem; padding: 0.5rem 0.9rem;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.btn:hover { background: #6b3fa0; }
+.link { display: inline-block; margin-left: 0.75rem; color: #6b3fa0; text-decoration: underline; cursor: pointer; }
+
+/* --- exercice 2 : le formulaire --- */
+form { display: grid; gap: 0.35rem; max-width: 24rem; }
+input { padding: 0.5rem; border: 1px solid #b9b0d6; border-radius: 0.4rem; font: inherit; }
+.error { color: #c0392b; margin: 0.1rem 0 0; }
+form .btn { margin-top: 0.8rem; justify-self: start; }
+
+/* --- exercice 3 : la modale --- */
+.overlay {
+  position: fixed; inset: 0; background: rgba(22, 18, 42, 0.6);
+  display: grid; place-items: center;
+}
+.modale { background: #fff; border-radius: 0.75rem; padding: 1.5rem; max-width: 24rem; }
+.modale h2 { margin-top: 0; }
+.modale .btn + .btn { margin-left: 0.75rem; }
+.btn--secondaire { background: #e3ddf2; color: #1d1a2e; }
+
+/* --- CORRIGÉ EXERCICE 4 : lien d'évitement, visible à la prise de focus --- */
+.evitement {
+  position: absolute; left: -9999px; top: 0;
+  background: #16122a; color: #fff;
+  padding: 0.5rem 1rem; z-index: 10;
+  text-decoration: underline;
+}
+.evitement:focus { left: 0; }
+
+/* --- CORRIGÉ EXERCICE 4 : pas d'anneau de focus sur le main (focus par script) --- */
+main:focus { outline: none; }
+
+/* --- CORRIGÉ AUDIT (exo 0) : contraste du pied de page corrigé --- */
+.pied { color: #5f5b73; }
