@@ -109,3 +109,14 @@ Rien à corriger cette fois : ajoutez du contenu conforme du premier coup.
 Validation : changement de voix sur la phrase anglaise ; tableau navigable
 cellule par cellule avec annonce des en-têtes ; « nouvelle fenêtre »
 annoncé ; animation coupée quand « Réduire les animations » est activé.
+
+---
+
+## Aparté — acronymes & prononciation (démo, rien à coder)
+
+Sur le sigle « RGAA », essayez VO + W (deux pressions : épellation).
+La prononciation appartient au lecteur d'écran et à son utilisateur :
+côté code, on écrit le sigle proprement, on donne sa signification en
+toutes lettres à la première occurrence (éventuellement `<abbr>`), et
+c'est tout. Jamais de `aria-label="R G A A"` ni de « R.G.A.A. » : ça
+casse le braille, la recherche et les autres lecteurs d'écran.
